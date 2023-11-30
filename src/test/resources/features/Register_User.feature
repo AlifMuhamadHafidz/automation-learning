@@ -3,7 +3,7 @@ Feature: Autoexercise Web - Register Page
   Scenario Outline: Register a new user
     Given User already access the Autoexercise Web
     When User validate that the homepage is visible successfully
-    When User click on Signup or Login Button
+    And click on Signup or Login Button
     And User input name "<Name>"
     And User input email "<Email>"
     And User click on Signup Button
