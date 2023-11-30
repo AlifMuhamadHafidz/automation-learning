@@ -213,9 +213,6 @@ public class Register_User_Steps {
 
     @Then("User should be presented with a homepage")
     public void user_should_be_presented_with_a_homepage() throws InterruptedException {
-        Thread.sleep(3000);
-        WebElement homepage_Visible = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a"));
-        assert homepage_Visible.isDisplayed() : "Homepage is not visible";
-
+          user_validate_that_the_homepage_is_visible_successfully();
     }
 }
