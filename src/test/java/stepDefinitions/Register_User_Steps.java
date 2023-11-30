@@ -27,8 +27,8 @@ public class Register_User_Steps {
 
     }
 
-    @And("User click on Signup or Login Button")
-    public void user_click_on_signup_or_login_button() {
+    @And("click on Signup or Login Button")
+    public void click_on_signup_or_login_button() {
         driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")).click();
     }
 
@@ -214,5 +214,13 @@ public class Register_User_Steps {
     @Then("User should be presented with a homepage")
     public void user_should_be_presented_with_a_homepage() throws InterruptedException {
           user_validate_that_the_homepage_is_visible_successfully();
+    }
+
+    @Then("User should see the email Address already exist! warning")
+    public void user_should_see_the_email_address_already_exist_warning() throws InterruptedException {
+        Thread.sleep(3000);
+        WebElement incorrect_Warning = driver.findElement(By.xpath("/html/body/section/div/div/div[3]/div/form/p"));
+
+        Assert.assertEquals(incorrect_Warning.getText(), "Email Address already exist!");
     }
 }
